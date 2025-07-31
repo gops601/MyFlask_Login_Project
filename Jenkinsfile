@@ -18,9 +18,9 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh "docker stop flask-container || true"
-                    sh "docker rm flask-container || true"
-                    sh "docker run -d --name flask-container -p 5000:5000 ${IMAGE_NAME}:${TAG}"
+                   bat "docker stop flask-container || exit 0"
+                    bat "docker rm flask-container || exit 0"
+                    bat "docker run -d --name flask-container -p 5000:5000 ${IMAGE_NAME}:${TAG}"{IMAGE_NAME}:${TAG}"
                 }
             }
         }
