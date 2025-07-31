@@ -6,12 +6,7 @@ pipeline {
         TAG = "latest"
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/gops601/MyFlask_Login_Project.git'
-            }
-        }
+    
 
         stage('Build Docker Image') {
             steps {
